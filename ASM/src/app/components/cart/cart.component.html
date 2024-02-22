@@ -1,0 +1,120 @@
+    <!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Shopping Cart</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="category.html">Cart</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+    <!--================Cart Area =================-->
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive" style="display: flex;">
+                    <table class="table" style="width: 200%;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of cart">
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img [src]="c.image" alt="" width="70px" height="70px">
+                                        </div>
+                                        <div class="media-body">
+                                            <p>{{c.name}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5>${{c.price}}</h5>
+                                </td>
+                                <td>
+                                    <button class="btn"><i class="fa fa-plus" (click)="plus(c.id)"></i></button>
+                                    <div class="product_count" style="padding: 5px 5px 5px 5px;">
+                                        <input type="text" name="qty" [value]="c.quantity" title="Quantity:" class="qty" style="width: 50px; text-align: center; padding-left: 5px;">
+                                    </div>
+                                    <button class="btn"><i class="fa fa-minus" (click)="minus(c.id)"></i></button>
+                                </td>
+                                <td>
+                                    <h5>${{c.quantity * c.price}}</h5>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <h5>Subtotal</h5>
+                                </td>
+                                <td>
+                                    <h5>${{subtotal}}</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="table" style="border-left: 1px solid rgb(199, 197, 197); padding-left: 10px;">
+                        <h3 style="text-align: center;">Thong tin khach hang</h3>
+                        
+                        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="">ho va ten</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="name" formControlName="name">
+                                <div style="color:red" *ngIf="myForm.get('name')?.invalid && (myForm.get('name')?.dirty || myForm.get('name')?.touched)">
+                                    Vui lòng nhập tên
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">so dien thoai</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Input field" formControlName="phone">
+                                <div style="color:red" *ngIf="myForm.get('phone')?.invalid && (myForm.get('phone')?.dirty || myForm.get('phone')?.touched)">
+                                    <span *ngIf="myForm.get('phone')?.errors?.['required']">Vui lòng nhập phone</span>
+                                    <span *ngIf="myForm.get('phone')?.errors?.['phone']">Vui lòng nhập đúng định dạng phone</span>
+                                </div>
+                            
+                            </div>
+                            <div class="form-group">
+                                <label for="">dia chi</label>
+                                <input type="text" class="form-control" id="location" placeholder="Input field" formControlName="location">
+                                <div style="color:red" *ngIf="myForm.get('location')?.invalid && (myForm.get('location')?.dirty || myForm.get('location')?.touched)">
+                                    <span *ngIf="myForm.get('location')?.errors?.['required']">Vui lòng nhập location</span>
+                                    <span *ngIf="myForm.get('location')?.errors?.['location']">Vui lòng nhập đúng định dạng location</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select name="" id="">
+                                    <option value="1">chon phuong thuc thanh toan</option>
+                                    <option value="2">nhan hang va thanh toan</option>
+                                    <option value="3">thanh toan momo</option>
+                                </select>
+                            </div>
+                        
+                            <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+                        </form>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Cart Area =================-->

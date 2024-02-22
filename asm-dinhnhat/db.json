@@ -1,0 +1,56 @@
+{
+  "products": [
+    {
+      "id": "2cd9",
+      "category": "ADIDAS",
+      "name": "linh",
+      "price": "456",
+      "discountPrice": "23",
+      "image": "https://keedo.vn/wp-content/uploads/2021/05/the-thao-nam-1.jpg"
+    },
+    {
+      "id": "95bd",
+      "category": "PUMA",
+      "name": "linh1",
+      "price": "23124",
+      "discountPrice": "23",
+      "image": "https://keedo.vn/wp-content/uploads/2021/05/the-thao-nam-1.jpg"
+    }
+  ],
+  "order": [
+    {
+      "id": "1cf5",
+      "name": "nhat",
+      "phone": "0967889822",
+      "location": "123da adsd",
+      "cart": [
+        {
+          "id": "6c70",
+          "category": "ADIDAS",
+          "name": "nhat1",
+          "price": "123",
+          "discountPrice": "23",
+          "image": "https://product.hstatic.net/1000230642/product/hsm000200trg__2__c743a15eaf3848ccbf689f9f8ddd75d9.jpg",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "b97e",
+      "name": "4",
+      "phone": "0967889822",
+      "location": "123da adsd",
+      "cart": [
+        {
+          "id": "6c70",
+          "category": "ADIDAS",
+          "name": "nhat1",
+          "price": "123",
+          "discountPrice": "23",
+          "image": "https://product.hstatic.net/1000230642/product/hsm000200trg__2__c743a15eaf3848ccbf689f9f8ddd75d9.jpg",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

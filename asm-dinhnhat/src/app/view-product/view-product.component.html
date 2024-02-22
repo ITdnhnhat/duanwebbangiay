@@ -1,0 +1,60 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Xem Sản phẩm</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i> &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered table-content">
+        <tbody>
+          <tr>
+            <td>
+              <label><b>Name</b></label>
+            </td>
+            <td>
+              <span>{{ productList.name }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Category</b></label>
+            </td>
+            <td>
+              <span>{{ productList.category }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Price</b></label>
+            </td>
+            <td>
+              <span>{{ productList.price }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Discount Price</b></label>
+            </td>
+            <td>
+              <span>{{ productList.discountPrice }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><b>Image</b></label>
+            </td>
+            <td><img src="{{ productList.image }}" alt="{{ productList.name }}" width="50" height="50"></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

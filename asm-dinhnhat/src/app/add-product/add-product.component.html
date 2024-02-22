@@ -1,0 +1,94 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Thêm Sản phẩm</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Quay lại</a>
+          </div>
+        </div>
+      </div>
+      <form #productForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="name" class="p-t-b-10">Tên sản phẩm <span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="name" required maxlength="255"
+                [(ngModel)]="addProductForm.name" name="name" #name="ngModel">
+              <div *ngIf="name.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!name.errors?.['required']">
+                  Vui lòng nhập Tên sản phẩm
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="category" class="p-t-b-10">Loại<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="category" required maxlength="255"
+                [(ngModel)]="addProductForm.category" name="category" #category="ngModel">
+              <div *ngIf="category.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!category.errors?.['required']">
+                  Vui lòng nhập Loại
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Giá<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="price" required [(ngModel)]="addProductForm.price" name="price"
+                #price="ngModel">></textarea>
+              <div *ngIf="price.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!price.errors?.['required']">
+                  Vui lòng nhập Giá
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Giá KM<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="discountPrice" required [(ngModel)]="addProductForm.discountPrice" name="discountPrice"
+                #discountPrice="ngModel">></textarea>
+              <div *ngIf="discountPrice.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!discountPrice.errors?.['required']">
+                  Vui lòng nhập Giá KM
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Hình ảnh<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="image" required [(ngModel)]="addProductForm.image" name="image"
+                #image="ngModel">></textarea>
+              <div *ngIf="image.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!image.errors?.['required']">
+                  Vui lòng nhập Hình ảnh
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="addProduct(productForm.form.valid)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Quản lí Don Hang</b></h4>
+            </div>
+            <!-- <div class="col-sm-6">
+              <button class="btn btn-success">
+                <i class='fas fa-plus-circle'></i><span> ADD</span>
+              </button>
+            </div> -->
+          </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered table-content">
+          <thead>
+            <tr class="center-align">
+              <th>ID</th>
+              <th>Tên khach hang</th>
+              <th>so dien thoai</th>
+              <th>dia chi</th>
+              <th>tinh trang</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orderList, let i = index">
+                <td style="text-align: center;">{{ i + 1 }}</td>
+                <td style="text-align: center;">{{item.name}}</td>
+                <td style="text-align: center;">{{item.phone}}</td>
+                <td style="text-align: center;">{{item.location}}</td>
+                <td style="text-align: center;">
+                  <a class="btn btn-primary" style="margin-right: 10px;" routerLink="/detailorder"> chi tiet don hang</a>
+                  <a class="btn btn-danger">Xoa don hang</a>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
